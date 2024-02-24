@@ -1,12 +1,13 @@
 import { Image, ScrollView, Text, TextInput, View } from "react-native";
 import Logo from "../assets/logo.png";
 import { Button } from "../components/button1";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { NativeStackScreenProps, NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StackParamList } from "../../App";
 
 type Props = NativeStackScreenProps<StackParamList, 'login'>;
 
-const LoginScreen = ({ navigation }: any) => {
+const LoginScreen = ({ navigation }: Props) => {
+
     return (
         <ScrollView className='p-6 w-full h-full bg-white'>
             <View className="flex items-center justify-center">
@@ -34,7 +35,7 @@ const LoginScreen = ({ navigation }: any) => {
                 </View>
             </View>
 
-            <Button variant='solid' color='primary' onPress={() => navigation.push("home")}>
+            <Button variant='solid' color='primary' onPress={() => navigation.navigate("private")}>
                 <Text className='text-white font-medium text-base'>logar</Text>
             </Button>
 
